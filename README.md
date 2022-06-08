@@ -1,2 +1,2 @@
-# graphQL-practice
-for practicing GraphQL
+# Next.js-workshop
+for practicing NextJS
