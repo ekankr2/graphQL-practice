@@ -6,31 +6,35 @@ export const getPosts = async () => {
     const query = gql`
         query MyQuery {
             postsConnection {
-            edges {
-                node {
-                    author {
-                        bio
-                        name
-                        id
-                        photo {
+                edges {
+                    cursor
+                    node {
+                        author {
+                            bio
+                            name
+                            id
+                            photo {
+                                url
+                            }
+                        }
+                        createdAt
+                        slug
+                        title
+                        excerpt
+                        featuredImage {
                             url
                         }
-                    }
-                    createdAt
-                    slug
-                    excerpt
-                    featuredImage {
-                        url
-                    }
-                    catagories {
-                        slug
+                        categories {
+                            name
+                            slug
+                        }
                     }
                 }
             }
-            }
         }
-    `
-    const result = await request(graphqlAPI, query)
+    `;
 
-    return result.postConnecion.edges;
-}
+    const result = await request(graphqlAPI, query);
+
+    return result.postsConnection.edges;
+};
