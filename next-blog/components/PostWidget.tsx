@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { getSimilarPosts, getRecentPosts } from '../services';
 
 interface Props {
-    categories: string[]
-    slug: string
+    categories?: string[]
+    slug?: string
 }
 
 const PostWidget: FC<Props> = ({ categories, slug }) => {
