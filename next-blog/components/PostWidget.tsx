@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PostWidget: FC<Props> = ({ categories, slug }) => {
-    const [relatedPosts, setRelatedPosts] = useState([]);
+    const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
 
     useEffect(() => {
         if (slug) {

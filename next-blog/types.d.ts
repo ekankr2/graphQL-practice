@@ -6,3 +6,8 @@ interface Post {
     }
     createdAt: any
 }
+
+interface Category {
+    name: string
+    slug: string
+}
