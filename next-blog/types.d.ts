@@ -2,7 +2,7 @@ interface Post {
     title: string
     author: string
     slug: string
-    catagories: Category[]
+    categories: Category[]
     featuredImage: {
         url: string
     }

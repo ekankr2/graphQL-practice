@@ -24,7 +24,7 @@ export const getPosts = async () => {
                         featuredImage {
                             url
                         }
-                        catagories {
+                        categories {
                             name
                             slug
                         }
