@@ -1,10 +1,20 @@
 interface Post {
     title: string
-    author: string
+    author: {
+        name: string
+        photo: {
+            url: string
+        }
+    }
     slug: string
     categories: Category[]
     featuredImage: {
         url: string
+    }
+    content: {
+        raw: {
+            children: any
+        }
     }
     createdAt: any
 }
