@@ -1,11 +1,6 @@
 interface Post {
     title: string
-    author: {
-        name: string
-        photo: {
-            url: string
-        }
-    }
+    author: Author
     slug: string
     categories: Category[]
     featuredImage: {
@@ -17,6 +12,14 @@ interface Post {
         }
     }
     createdAt: any
+}
+
+interface Author {
+    name: string
+    bio: string
+    photo: {
+        url: string
+    }
 }
 
 interface Category {
