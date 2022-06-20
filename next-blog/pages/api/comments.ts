@@ -7,6 +7,7 @@ type Data = {
 }
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT || ''
+const graphcmsToken = process.env.GRAPHCMS_TOKEN || ''
 
 export default async function Comments(
     req: NextApiRequest,
@@ -15,7 +16,7 @@ export default async function Comments(
     const {name, email, slug, comment} = req.body
     const graphQLClient = new GraphQLClient(graphqlAPI, {
         headers: {
-            authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`
+            authorization: `Bearer ${graphcmsToken}`
         }
     })
 
