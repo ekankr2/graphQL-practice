@@ -66,7 +66,7 @@ const CommentsForm: FC<Props> = ({ slug }) => {
                         formData.email = '';
                     }
                     formData.comment = '';
-                    setFormData((prevState) => ({
+                    setFormData((prevState: typeof formData) => ({
                         ...prevState,
                         ...formData,
                     }));

@@ -26,3 +26,10 @@ interface Category {
     name: string
     slug: string
 }
+
+interface CommentObj {
+    name: string,
+    email: string,
+    comment: string,
+    slug: string
+}
