@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 function Footer(props) {
     return (
@@ -6,9 +7,11 @@ function Footer(props) {
             <footer className="text-gray-600 body-font">
                 <div className="bg-gray-100">
                     <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
-                        <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <span className="ml-3 text-xl">빡빡이 포트폴리오</span>
-                        </a>
+                        <Link href="/">
+                            <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                                <span className="ml-3 text-xl">빡빡이 포트폴리오</span>
+                            </a>
+                        </Link>
                         <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
                             <a href="https://twitter.com/knyttneve" rel="noopener noreferrer"
                                className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
@@ -35,7 +38,8 @@ function Footer(props) {
           </svg>
         </a>
         <a className="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke="currentColor" stroke-strokeLinecap="round" strokeLinejoin="round" strokeWidth="0"
+          <svg fill="currentColor" stroke="currentColor" stroke-strokeLinecap="round" strokeLinejoin="round"
+               strokeWidth="0"
                className="w-5 h-5" viewBox="0 0 24 24">
             <path stroke="none"
                   d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
@@ -47,7 +51,7 @@ function Footer(props) {
                 </div>
             </footer>
         </>
-);
+    );
 }
 
 export default Footer;

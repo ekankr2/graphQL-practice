@@ -1,5 +1,6 @@
 import React from 'react';
 import Animation from "./Animation";
+import Link from "next/link";
 
 const Hero = () => {
     return (
@@ -17,10 +18,12 @@ const Hero = () => {
                     원대하고, 돋고, 보이는 약동하다. 살 그들은 그들의 대고, 얼마나 노래하며 불어 목숨이 이상의 칼이다. 오직 시들어 발휘하기 그리하였는가? 위하여 무엇을 풍부하게
                     피어나기 쓸쓸하랴?</p>
                 <div className="flex justify-center">
-                    <button
-                        className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                        프로젝트 보러가기
-                    </button>
+                    <Link href="/projects">
+                        <a className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                            프로젝트 보러가기
+                        </a>
+                    </Link>
+
                 </div>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
