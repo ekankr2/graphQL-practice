@@ -19,7 +19,7 @@ const Hero = () => {
                     피어나기 쓸쓸하랴?</p>
                 <div className="flex justify-center">
                     <Link href="/projects">
-                        <a className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        <a className="btn-project">
                             프로젝트 보러가기
                         </a>
                     </Link>
