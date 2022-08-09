@@ -8,7 +8,7 @@ export default NextAuth({
             name: 'Email',
             credentials: {
                 id: { label: "Email", type: "text", placeholder: "email@medicalip.com" },
-                pw: {  label: "Password", type: "password", placeholder: "your password" }
+                pw: {  label: "Password", type: "password", placeholder: "your password" },
             },
             async authorize(credentials, req) {
                 console.log(credentials)
