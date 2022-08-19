@@ -10,18 +10,18 @@ const pexel = (id: number) => `/images/${id}.png`
 
 const images = [
     // Front
-    {position: [-2.5, 0, 3.3], rotation: [0, -0.05, 0], url: pexel(1)},
+    {position: [-2.5, 0, 3.3], rotation: [0, -0.1, 0], url: pexel(1)},
     // Back
-    {position: [-1.63, 0, 3], rotation: [0, -Math.PI / 28, 0], url: pexel(2)},
-    {position: [-0.8, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(3)},
+    {position: [-1.8, 0, 3], rotation: [0, -0.15, 0], url: pexel(2)},
+    {position: [-1, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(3)},
     // Left
-    {position: [0.09, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(4)},
-    {position: [1, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(5)},
-    {position: [2, 0, 1.8], rotation: [0, -Math.PI / 6, 0], url: pexel(6)},
+    {position: [-0.1, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(4)},
+    {position: [0.8, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(5)},
+    {position: [1.75, 0, 1.8], rotation: [0, -Math.PI / 7, 0], url: pexel(6)},
     // Right
-    {position: [3.15, 0, 1.5], rotation: [0, -Math.PI / 4.5, 0], url: pexel(7)},
-    {position: [4.4, 0, 1.2], rotation: [0, -Math.PI / 3.2, 0], url: pexel(8)},
-    {position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 3.5, 0], url: pexel(9)}
+    {position: [2.88, 0, 1.5], rotation: [0, -Math.PI / 5, 0], url: pexel(7)},
+    {position: [4.1, 0, 1.2], rotation: [0, -Math.PI / 5, 0], url: pexel(8)},
+    {position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 5, 0], url: pexel(9)}
 ]
 
 // const images = [
@@ -131,11 +131,12 @@ function Frame({url, c = new THREE.Color(), ...props}: any) {
                     <boxGeometry/>
                     <meshBasicMaterial toneMapped={false} fog={false}/>
                 </mesh>
-                <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url}/>
+                {/*@ts-ignore*/}
+                <Image alt='organ images' scale={[1,1.8,1]} raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url}/>
             </mesh>
-            <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
-                {name.split('-').join(' ')}
-            </Text>
+            {/*<Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>*/}
+            {/*    {name.split('-').join(' ')}*/}
+            {/*</Text>*/}
         </group>
     )
 }
