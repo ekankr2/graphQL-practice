@@ -9,12 +9,12 @@ const pexel = (id: number) => `https://images.pexels.com/photos/${id}/pexels-pho
 
 const images = [
     // Front
-    {position: [-3.5, 0, 2.5], rotation: [0, 0, 0], url: pexel(1103970)},
+    {position: [-3.2, 0, 2.8], rotation: [0, 0, 0], url: pexel(1103970)},
     // Back
-    {position: [-2.4, 0, 2.55], rotation: [0, -Math.PI / 12, 0], url: pexel(416430)},
-    {position: [-1.65, 0, 2.6], rotation: [0, -Math.PI / 8.5, 0], url: pexel(310452)},
+    {position: [-2.4, 0, 2.55], rotation: [0, -Math.PI / 15, 0], url: pexel(416430)},
+    {position: [-1.65, 0, 2.6], rotation: [0, -Math.PI / 12, 0], url: pexel(310452)},
     // Left
-    {position: [-1, 0, 2.55], rotation: [0, -Math.PI / 7, 0], url: pexel(327482)},
+    {position: [-1, 0, 2.55], rotation: [0, -Math.PI / 8, 0], url: pexel(327482)},
     {position: [-0.3, 0, 2.5], rotation: [0, -Math.PI / 5.5, 0], url: pexel(325185)},
     {position: [0.5, 0, 2.5], rotation: [0, -Math.PI / 4.3, 0], url: pexel(358574)},
     // Right
@@ -111,9 +111,9 @@ function Frame({url, c = new THREE.Color(), ...props}: any) {
     const name = getUuid(url)
     useCursor(hovered)
     useFrame((state) => {
-        image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
-        image.current.scale.x = THREE.MathUtils.lerp(image.current.scale.x, 0.85 * (hovered ? 0.85 : 1), 0.1)
-        image.current.scale.y = THREE.MathUtils.lerp(image.current.scale.y, 0.9 * (hovered ? 0.905 : 1), 0.1)
+        // image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
+        image.current.scale.x = THREE.MathUtils.lerp(image.current.scale.x, 0.85, 0.1)
+        image.current.scale.y = THREE.MathUtils.lerp(image.current.scale.y, 0.9, 0.1)
         frame.current.material.color.lerp(c.set(hovered ? 'orange' : 'white'), 0.1)
     })
     return (
