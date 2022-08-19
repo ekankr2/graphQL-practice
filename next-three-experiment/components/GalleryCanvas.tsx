@@ -5,38 +5,39 @@ import * as THREE from 'three'
 import {useLocation, useRoute} from "wouter";
 import getUuid from 'uuid-by-string'
 
-const pexel = (id: number) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`
+// const pexel = (id: number) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`
+const pexel = (id: number) => `/images/${id}.png`
 
 const images = [
     // Front
-    {position: [-3.2, 0, 2.8], rotation: [0, 0, 0], url: pexel(1103970)},
+    {position: [-2.5, 0, 3.3], rotation: [0, -0.05, 0], url: pexel(1)},
     // Back
-    {position: [-2.4, 0, 2.55], rotation: [0, -Math.PI / 15, 0], url: pexel(416430)},
-    {position: [-1.65, 0, 2.6], rotation: [0, -Math.PI / 12, 0], url: pexel(310452)},
+    {position: [-1.63, 0, 3], rotation: [0, -Math.PI / 28, 0], url: pexel(2)},
+    {position: [-0.8, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(3)},
     // Left
-    {position: [-1, 0, 2.55], rotation: [0, -Math.PI / 8, 0], url: pexel(327482)},
-    {position: [-0.3, 0, 2.5], rotation: [0, -Math.PI / 5.5, 0], url: pexel(325185)},
-    {position: [0.5, 0, 2.5], rotation: [0, -Math.PI / 4.3, 0], url: pexel(358574)},
+    {position: [0.09, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(4)},
+    {position: [1, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(5)},
+    {position: [2, 0, 1.8], rotation: [0, -Math.PI / 6, 0], url: pexel(6)},
     // Right
-    {position: [1.4, 0, 2.55], rotation: [0, -Math.PI / 4, 0], url: pexel(227675)},
-    {position: [2.2, 0, 2.6], rotation: [0, -Math.PI / 3.6, 0], url: pexel(911738)},
-    {position: [3, 0, 2.75], rotation: [0, -Math.PI / 3.5, 0], url: pexel(1738986)}
+    {position: [3.15, 0, 1.5], rotation: [0, -Math.PI / 4.5, 0], url: pexel(7)},
+    {position: [4.4, 0, 1.2], rotation: [0, -Math.PI / 3.2, 0], url: pexel(8)},
+    {position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 3.5, 0], url: pexel(9)}
 ]
 
 // const images = [
 //     // Front
-//     {position: [0, 0, 1.5], rotation: [0, 0, 0], url: pexel(1103970)},
+//     {position: [-2.5, 0, 3.3], rotation: [0, -0.05, 0], url: pexel(1103970)},
 //     // Back
-//     {position: [-0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(416430)},
-//     {position: [0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(310452)},
+//     {position: [-1.63, 0, 3], rotation: [0, -Math.PI / 28, 0], url: pexel(416430)},
+//     {position: [-0.8, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(310452)},
 //     // Left
-//     {position: [-1.75, 0, 0.25], rotation: [0, Math.PI / 2.5, 0], url: pexel(327482)},
-//     {position: [-2.15, 0, 1.5], rotation: [0, Math.PI / 2.5, 0], url: pexel(325185)},
-//     {position: [-2, 0, 2.75], rotation: [0, Math.PI / 2.5, 0], url: pexel(358574)},
+//     {position: [0.09, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(327482)},
+//     {position: [1, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(325185)},
+//     {position: [2, 0, 1.8], rotation: [0, -Math.PI / 6, 0], url: pexel(358574)},
 //     // Right
-//     {position: [1.75, 0, 0.25], rotation: [0, -Math.PI / 2.5, 0], url: pexel(227675)},
-//     {position: [2.15, 0, 1.5], rotation: [0, -Math.PI / 2.5, 0], url: pexel(911738)},
-//     {position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: pexel(1738986)}
+//     {position: [3.15, 0, 1.5], rotation: [0, -Math.PI / 4.5, 0], url: pexel(227675)},
+//     {position: [4.4, 0, 1.2], rotation: [0, -Math.PI / 3.2, 0], url: pexel(911738)},
+//     {position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 3.5, 0], url: pexel(1738986)}
 // ]
 
 const GOLDENRATIO = 1.61803398875
