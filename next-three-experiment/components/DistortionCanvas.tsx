@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {Landing} from "./slider/landing/landing";
 import {Slider} from "./slider/Slider";
+import {Animal} from "../interfaces/animals";
 
 const DistortionCanvas = () => {
     const [item, setItem] = useState<number>(0);
 
-    const list: any[] = [
+    const list: Animal[] = [
         {
             species: 'Amur Leopard',
             age: 2,
@@ -34,8 +35,8 @@ const DistortionCanvas = () => {
 
     return (
         <div className="App">
-            {/*<Landing animals={list} item={item}></Landing>*/}
-            {/*<Slider onItem={(index: number) => setItem(index)} size={list.length}></Slider>*/}
+            <Landing animals={list} item={item}></Landing>
+            <Slider onItem={(index: number) => setItem(index)} size={list.length}></Slider>
         </div>
     )
 };

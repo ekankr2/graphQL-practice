@@ -10,19 +10,19 @@ const pexel = (id: number) => `/images/${id}.png`
 
 const images = [
     // Front
-    {position: [-2.5, 0, 3.3], rotation: [0, -0.1, 0], url: pexel(1)},
+    { position: [-2.65, 0, 3.3], rotation: [0, -0.1, 0], url: pexel(1) },
     // Back
-    {position: [-1.8, 0, 3], rotation: [0, -0.15, 0], url: pexel(2)},
-    {position: [-1, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(3)},
+    { position: [-1.85, 0, 3], rotation: [0, -0.13, 0], url: pexel(2) },
+    { position: [-1, 0, 2.7], rotation: [0, -Math.PI / 15, 0], url: pexel(3) },
     // Left
-    {position: [-0.1, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(4)},
-    {position: [0.8, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(5)},
-    {position: [1.75, 0, 1.8], rotation: [0, -Math.PI / 7, 0], url: pexel(6)},
+    { position: [-0.1, 0, 2.4], rotation: [0, -Math.PI / 12, 0], url: pexel(4) },
+    { position: [0.8, 0, 2.1], rotation: [0, -Math.PI / 9, 0], url: pexel(5) },
+    { position: [1.75, 0, 1.8], rotation: [0, -Math.PI / 7, 0], url: pexel(6) },
     // Right
-    {position: [2.88, 0, 1.5], rotation: [0, -Math.PI / 5, 0], url: pexel(7)},
-    {position: [4.1, 0, 1.2], rotation: [0, -Math.PI / 5, 0], url: pexel(8)},
-    {position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 5, 0], url: pexel(9)}
-]
+    { position: [2.88, 0, 1.5], rotation: [0, -Math.PI / 5, 0], url: pexel(7) },
+    { position: [4.1, 0, 1.2], rotation: [0, -Math.PI / 5, 0], url: pexel(8) },
+    { position: [5.5, 0, 0.9], rotation: [0, -Math.PI / 5, 0], url: pexel(9) },
+];
 
 // const images = [
 //     // Front
@@ -113,9 +113,9 @@ function Frame({url, c = new THREE.Color(), ...props}: any) {
     useCursor(hovered)
     useFrame((state) => {
         // image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
-        image.current.scale.x = THREE.MathUtils.lerp(image.current.scale.x, 0.85, 0.1)
-        image.current.scale.y = THREE.MathUtils.lerp(image.current.scale.y, 0.9, 0.1)
-        frame.current.material.color.lerp(c.set(hovered ? 'orange' : 'white'), 0.1)
+        image.current.scale.x = THREE.MathUtils.lerp(image.current.scale.x, 0.87, 0.1);
+        image.current.scale.y = THREE.MathUtils.lerp(image.current.scale.y, 0.91, 0.1);
+        frame.current.material.color.lerp(c.set(hovered ? '#100f0f' : '#100f0f'), 0.1)
     })
     return (
         <group {...props}>

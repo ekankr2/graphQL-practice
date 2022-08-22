@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Animal } from '../../interfaces/animals';
-import { SliderEffect } from '../../utils/effect';
 import { TweenLite } from 'gsap';
-import { Effects } from '../../interfaces/effects';
+import {Animal} from "../../../interfaces/animals";
+import {Effects} from "../../../interfaces/effects";
+import {SliderEffect} from "../../../utils/effect";
 
 interface Props {
     item: number;
