@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 
-* {
-    box-sizing: border-box;
-}
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-html,
-body,
-#root {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+/*html,*/
+/*body,*/
+/*#root {*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*}*/
 
-body {
-    color: white;
-    user-select: none;
-}
+/*body {*/
+/*    color: white;*/
+/*    user-select: none;*/
+/*}*/
 
-.gallery {
-    height: 100vh;
-}
+/*.gallery {*/
+/*    height: 100vh;*/
+/*}*/
