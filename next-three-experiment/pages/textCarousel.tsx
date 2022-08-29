@@ -1,60 +1,45 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {NextPage} from "next";
-import {useSwipeable} from "react-swipeable";
+import useEmblaCarousel from "embla-carousel-react";
+
+const slides = [1,2,3,4,5]
 
 const TextCarousel: NextPage = () => {
-    const [activeIdx, setActiveIdx] = useState(0);
-    const texts = ["Ini text 1", "Ini text 2", "Ini text 3"];
-    const handlers = useSwipeable({
-        onSwipedRight: () => {
-            if (activeIdx > 0) {
-                setActiveIdx(activeIdx - 1);
-            } else {
-                setActiveIdx(texts.length - 1);
-            }
-        },
-        onSwipedLeft: () => {
-            if (activeIdx < texts.length - 1) {
-                setActiveIdx(activeIdx + 1);
-            } else {
-                setActiveIdx(0);
-            }
-        },
-        trackMouse: true
-    });
+    const [viewportRef, embla] = useEmblaCarousel({ axis: "y", loop: true, align: 'center' });
+    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+    const scrollPrev = useCallback(() => embla?.scrollPrev(), [embla]);
+    const scrollNext = useCallback(() => embla?.scrollNext(), [embla]);
+
+    const onSelect = useCallback(() => {
+        if (!embla) return;
+        setPrevBtnEnabled(embla.canScrollPrev());
+        setNextBtnEnabled(embla.canScrollNext());
+    }, [embla]);
+
     useEffect(() => {
-        if (document) {
-            const scrollSize = document.getElementById("text-carousel")?.offsetWidth;
-            document.getElementById("text-carousel")?.scroll({
-                // @ts-ignore
-                left: activeIdx * scrollSize,
-                behavior: "smooth"
-            });
-        }
-    });
+        if (!embla) return;
+        embla.on("select", onSelect);
+        embla.on("reInit", onSelect);
+        onSelect();
+    }, [embla, onSelect]);
 
     return (
-        <div className="h-[500px] w-[500px]">
-            {activeIdx}
-            <div id="text-carousel" className="flex overflow-hidden bg-blue-300" {...handlers}>
-                {texts.map((txt, idx) => (
-                    <div className="min-w-full" key={`txt-${idx}`}>
-                        <h1>{txt}</h1>
-                    </div>
-                ))}
+        <div className="bg-black text-white w-[300px] max-h-[500px]">
+            <div className="w-full overflow-hidden" ref={viewportRef}>
+                <div className="h-[250px] flex flex-col select-none">
+                    {slides.map((index) => (
+                        <div className="min-h-[33%] relative flex justify-center items-center" key={index}>
+                            <div className="overflow-hidden flex justify-center items-center">
+                                <h1 className="min-w-full min-h-full">
+                                    {index}
+                                </h1>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            {/*<div className="text-carousel__indicator">*/}
-            {/*    {texts.map((txt, idx) => (*/}
-            {/*        <div*/}
-            {/*            key={idx}*/}
-            {/*            onClick={() => setActiveIdx(idx)}*/}
-            {/*            className={`*/}
-            {/*  text-carousel__indicator-item*/}
-            {/*  ${activeIdx === idx && "active"}*/}
-            {/*`}*/}
-            {/*        />*/}
-            {/*    ))}*/}
-            {/*</div>*/}
         </div>
     );
 };
