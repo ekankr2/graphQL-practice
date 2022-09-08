@@ -3,11 +3,12 @@ import {NextPage} from "next";
 
 const MovingArrow: NextPage = () => {
     return (
-        <div>
-            <div className="scroll">
-                <span className="scroll__line"></span>
-            </div>
-            <span className="scroll__arrow">
+        <div className="bg-gray-400 w-screen h-screen p-40">
+            <div className="w-[20px]">
+                <span className="relative m-auto h-[180px] overflow-hidden flex justify-center">
+                    <span className="block w-[1px] h-full z-10 bg-white animate-scroll"></span>
+                </span>
+                <span className="block relative z-20 pl-[2px] -top-[9px]">
     <svg width="17px" height="9px" viewBox="0 0 17 9" version="1.1" xmlns="http://www.w3.org/2000/svg"
          xmlnsXlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="square">
@@ -20,6 +21,7 @@ const MovingArrow: NextPage = () => {
         </g>
     </svg>
   </span>
+            </div>
         </div>
     );
 };
